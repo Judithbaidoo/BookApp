@@ -14,7 +14,7 @@ const book = ({book, bookShelfUpdate}) => {
                 }}
                 ></div>
                 <div className="book-shelf-changer">
-                <select defaultValue={book.shelf} onChange= {(e) => bookShelfUpdate(book,e.target.value) }>
+                <select defaultValue={book.shelf ? book.shelf : "none"} onChange= {(e) => bookShelfUpdate(book,e.target.value)}>
                     <option value="none" disabled>
                     Move to...
                     </option>
@@ -31,7 +31,5 @@ const book = ({book, bookShelfUpdate}) => {
             <div className="book-authors">{book.authors}</div>
         </div>
     )
-
-}
-
+};
 export default book;

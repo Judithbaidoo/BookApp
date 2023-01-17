@@ -13,8 +13,6 @@ const bodyshelves = ({books , bookShelfUpdate}) => {
             <Shelf  title = "Want To Read" books = {wantToRead} bookShelfUpdate = {bookShelfUpdate} />
             <Shelf  title = "Read" books = {read} bookShelfUpdate = {bookShelfUpdate} />
         </div>
-    )
-
-}
-
+    );
+};
 export default bodyshelves;

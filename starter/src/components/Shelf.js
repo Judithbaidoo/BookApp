@@ -12,13 +12,10 @@ const Shelf = ({books, title, bookShelfUpdate}) => {
                         <Book book = {b}bookShelfUpdate = {bookShelfUpdate} />
                       </li>
 
-                    ))}
-                    
+                    ))};                    
                   </ol>
                 </div>
               </div>
     )
-
-}
-
+};
 export default Shelf;
