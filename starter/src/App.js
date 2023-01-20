@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router , Switch , Route , Link } from "react-router-dom" ;
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Header from "./components/Header";
 import Bodyshelves from "./components/Bodyshelves";
 import { useState , useEffect} from "react";
@@ -74,18 +74,19 @@ function App() {
   };
   return (
     <div className="app">
-      <Router>
-        <Switch>
-
-        {/*SEARCH*/}
-          <Route path = "/search">
+      <BrowserRouter>
+        <Routes>
+      
+              {/*SEARCH*/}
+          <Route path="/search" element={
             <div className="search-books">
               <div className="search-books-bar">
-                <Link to = "/">
-                <a className="close-search">
+              <Link to = "/">
+                <span className="close-search">
                   Close
-                </a>
-                </Link>
+                </span>
+              </Link>
+            
                 <div className="search-books-input-wrapper">
                   <input
                     type="text"
@@ -103,23 +104,27 @@ function App() {
                 </ol>
               </div>
             </div>
-          </Route>
+          } />
+          
+      
           {/*HOME PAGE*/}
-          <Route path = "/">
+          <Route path="/" element={
+          
             <div className="list-books">
               <Header/>
               <div className="list-books-content">
                 <Bodyshelves books={books} bookShelfUpdate = {bookShelfUpdate}/>
               </div>
               <div className="open-search">
-                <Link to = "/search">
-                  <a >Add a book</a>
-                </Link>                    
+                <Link to = "/search" >
+             
+                  <span>Add a book</span>
+                </Link>               
               </div>
             </div>
-          </Route>
-        </Switch>
-      </Router>
+            } />
+        </Routes>
+      </BrowserRouter>  
     </div>
   );
 };
